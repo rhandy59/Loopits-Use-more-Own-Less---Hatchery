@@ -54,7 +54,7 @@ const products = [
         name: "Sony Alpha Camera Kit",
         category: "Cameras",
         price: 125000,
-        location: "BINUS Senayan",
+        location: "BINUS Kemanggisan",
         image: "Images/Polaroid.jpg",
         rating: 4.8
     },
@@ -64,7 +64,7 @@ const products = [
         name: "Portable Mini Projector",
         category: "Projectors",
         price: 60000,
-        location: "BINUS Kemanggisan",
+        location: "BINUS Anggrek",
         image: "Images/Projector.jpg",
         rating: 4.6
     },
@@ -74,8 +74,8 @@ const products = [
         name: "Party Decor Set",
         category: "Events",
         price: 75000,
-        location: "BINUS Kemanggisan",
-        image: "Images/Tent.jpg",
+        location: "BINUS Anggrek",
+        image: "Images/Party.jpg",
         rating: 4.9
     },
 
@@ -84,7 +84,7 @@ const products = [
         name: "Tennis Racket",
         category: "Sports",
         price: 60000,
-        location: "BINUS Alam Sutera",
+        location: "BINUS Kemanggisan",
         image: "Images/Tennis.jpg",
         rating: 4.7
     },
@@ -94,7 +94,7 @@ const products = [
         name: "DJ Speaker",
         category: "Audio",
         price: 130000,
-        location: "BINUS Alam Sutera",
+        location: "BINUS Anggrek",
         image: "Images/Speaker.jpg",
         rating: 4.8
     },
@@ -124,7 +124,8 @@ const products = [
         name: "GoPro Action Camera",
         category: "Cameras",
         price: 100000,
-        location: "Images/GoPro.jpg",
+        location: "BINUS Kemanggisan",
+        image: "Images/GoPro.jpg",
         rating: 4.8
     }
 ];
