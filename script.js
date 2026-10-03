@@ -15,7 +15,7 @@ const products = [
         category: "Cameras",
         price: 50000,
         location: "BINUS Senayan",
-        image: "Images/Canon.Jpg",
+        image: "Images/Canon.jpg",
         rating: 4.9
     },
 
@@ -25,7 +25,7 @@ const products = [
         category: "Projectors",
         price: 85000,
         location: "BINUS Anggrek",
-        image: "Images/Projector.Jpg",
+        image: "Images/Projector.jpg",
         rating: 4.8
     },
 
@@ -35,7 +35,7 @@ const products = [
         category: "Travel",
         price: 100000,
         location: "BINUS Anggrek",
-        image: "Images/Luggage.Jpg",
+        image: "Images/Luggage.jpg",
         rating: 4.9
     },
 
@@ -55,7 +55,7 @@ const products = [
         category: "Cameras",
         price: 125000,
         location: "BINUS Senayan",
-        image: "Images/Polaroid.Jpg",
+        image: "Images/Polaroid.jpg",
         rating: 4.8
     },
 
@@ -65,7 +65,7 @@ const products = [
         category: "Projectors",
         price: 60000,
         location: "BINUS Kemanggisan",
-        image: "Images/Projector.Jpg",
+        image: "Images/Projector.jpg",
         rating: 4.6
     },
 
@@ -75,7 +75,7 @@ const products = [
         category: "Events",
         price: 75000,
         location: "BINUS Kemanggisan",
-        image: "Images/Party.Jpg",
+        image: "Images/Party.jpg",
         rating: 4.9
     },
 
@@ -85,7 +85,7 @@ const products = [
         category: "Sports",
         price: 60000,
         location: "BINUS Alam Sutera",
-        image: "Images/Tennis.Jpg",
+        image: "Images/Tennis.jpg",
         rating: 4.7
     },
 
@@ -95,7 +95,7 @@ const products = [
         category: "Audio",
         price: 130000,
         location: "BINUS Alam Sutera",
-        image: "Images/Speaker.Jpg",
+        image: "Images/Speaker.jpg",
         rating: 4.8
     },
 
@@ -105,7 +105,7 @@ const products = [
         category: "Sports",
         price: 110000,
         location: "BINUS Kemanggisan",
-        image: "Images/Bike.Jpg",
+        image: "Images/Bike.jpg",
         rating: 4.9
     },
 
@@ -115,7 +115,7 @@ const products = [
         category: "Events",
         price: 45000,
         location: "BINUS Anggrek",
-        image: "Images/Chair.Jpg",
+        image: "Images/Chair.jpg",
         rating: 4.6
     },
 
@@ -124,8 +124,7 @@ const products = [
         name: "GoPro Action Camera",
         category: "Cameras",
         price: 100000,
-        location: "BINUS Kemanggisan",
-        image: "Images/GoPro.Jpg",
+        location: "Images/GoPro.jpg",
         rating: 4.8
     }
 ];
