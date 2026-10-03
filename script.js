@@ -15,7 +15,7 @@ const products = [
         category: "Cameras",
         price: 50000,
         location: "BINUS Senayan",
-        image: "images/Canon.jpg",
+        image: "Images/Canon.jpg",
         rating: 4.9
     },
 
@@ -25,7 +25,7 @@ const products = [
         category: "Projectors",
         price: 85000,
         location: "BINUS Anggrek",
-        image: "images/Projector.jpg",
+        image: "Images/Projector.jpg",
         rating: 4.8
     },
 
@@ -35,7 +35,7 @@ const products = [
         category: "Travel",
         price: 100000,
         location: "BINUS Anggrek",
-        image: "images/Luggage.jpg",
+        image: "Images/Luggage.jpg",
         rating: 4.9
     },
 
@@ -45,7 +45,7 @@ const products = [
         category: "Camping",
         price: 75000,
         location: "BINUS Senayan",
-        image: "images/Tent.jpg",
+        image: "Images/Tent.jpg",
         rating: 4.7
     },
 
@@ -55,7 +55,7 @@ const products = [
         category: "Cameras",
         price: 125000,
         location: "BINUS Senayan",
-        image: "images/Polaroid.jpg",
+        image: "Images/Polaroid.jpg",
         rating: 4.8
     },
 
@@ -65,7 +65,7 @@ const products = [
         category: "Projectors",
         price: 60000,
         location: "BINUS Kemanggisan",
-        image: "images/Projector.jpg",
+        image: "Images/Projector.jpg",
         rating: 4.6
     },
 
@@ -75,7 +75,7 @@ const products = [
         category: "Events",
         price: 75000,
         location: "BINUS Kemanggisan",
-        image: "images/Party.jpg",
+        image: "Images/Party.jpg",
         rating: 4.9
     },
 
@@ -85,7 +85,7 @@ const products = [
         category: "Sports",
         price: 60000,
         location: "BINUS Alam Sutera",
-        image: "images/Tennis.jpg",
+        image: "Images/Tennis.jpg",
         rating: 4.7
     },
 
@@ -95,7 +95,7 @@ const products = [
         category: "Audio",
         price: 130000,
         location: "BINUS Alam Sutera",
-        image: "images/Speaker.jpg",
+        image: "Images/Speaker.jpg",
         rating: 4.8
     },
 
@@ -105,7 +105,7 @@ const products = [
         category: "Sports",
         price: 110000,
         location: "BINUS Kemanggisan",
-        image: "images/Bike.jpg",
+        image: "Images/Bike.jpg",
         rating: 4.9
     },
 
@@ -115,7 +115,7 @@ const products = [
         category: "Events",
         price: 45000,
         location: "BINUS Anggrek",
-        image: "images/Chair.jpg",
+        image: "Images/Chair.jpg",
         rating: 4.6
     },
 
@@ -125,7 +125,7 @@ const products = [
         category: "Cameras",
         price: 100000,
         location: "BINUS Kemanggisan",
-        image: "images/GoPro.jpg",
+        image: "Images/GoPro.jpg",
         rating: 4.8
     }
 ];
@@ -143,7 +143,7 @@ const orders = [
         status: "Completed",
         total: 100000,
         days: 2,
-        image: "images/Canon.jpg"
+        image: "Images/Canon.jpg"
     },
 
     {
@@ -153,7 +153,7 @@ const orders = [
         status: "Completed",
         total: 85000,
         days: 1,
-        image: "images/Projector.jpg"
+        image: "Images/Projector.jpg"
     },
 
     {
@@ -163,7 +163,7 @@ const orders = [
         status: "Cancelled",
         total: 75000,
         days: 1,
-        image: "images/Tent.jpg"
+        image: "Images/Tent.jpg"
     }
 ];
 
@@ -321,7 +321,7 @@ function navbar(active = "home") {
                 >
 
                     <img
-                        src="images/Loopits.Jpeg"
+                        src="Images/Loopits.Jpeg"
                         alt="Loopit Logo"
                         class="loopit-logo"
                     >
