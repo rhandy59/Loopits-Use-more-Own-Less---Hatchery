@@ -75,7 +75,7 @@ const products = [
         category: "Events",
         price: 75000,
         location: "BINUS Kemanggisan",
-        image: "Images/Party.jpg",
+        image: "Images/Tent.jpg",
         rating: 4.9
     },
 
