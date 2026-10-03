@@ -143,7 +143,7 @@ const orders = [
         status: "Completed",
         total: 100000,
         days: 2,
-        image: "Images/Canon.Jpg"
+        image: "Images/Canon.jpg"
     },
 
     {
@@ -153,7 +153,7 @@ const orders = [
         status: "Completed",
         total: 85000,
         days: 1,
-        image: "Images/Projector.Jpg"
+        image: "Images/Projector.jpg"
     },
 
     {
