@@ -15,7 +15,7 @@ const products = [
         category: "Cameras",
         price: 50000,
         location: "BINUS Senayan",
-        image: "Images/Canon.jpg",
+        image: "Images/Canon.Jpg",
         rating: 4.9
     },
 
@@ -25,7 +25,7 @@ const products = [
         category: "Projectors",
         price: 85000,
         location: "BINUS Anggrek",
-        image: "Images/Projector.jpg",
+        image: "Images/Projector.Jpg",
         rating: 4.8
     },
 
@@ -35,7 +35,7 @@ const products = [
         category: "Travel",
         price: 100000,
         location: "BINUS Anggrek",
-        image: "Images/Luggage.jpg",
+        image: "Images/Luggage.Jpg",
         rating: 4.9
     },
 
@@ -55,7 +55,7 @@ const products = [
         category: "Cameras",
         price: 125000,
         location: "BINUS Senayan",
-        image: "Images/Polaroid.jpg",
+        image: "Images/Polaroid.Jpg",
         rating: 4.8
     },
 
@@ -65,7 +65,7 @@ const products = [
         category: "Projectors",
         price: 60000,
         location: "BINUS Kemanggisan",
-        image: "Images/Projector.jpg",
+        image: "Images/Projector.Jpg",
         rating: 4.6
     },
 
@@ -75,7 +75,7 @@ const products = [
         category: "Events",
         price: 75000,
         location: "BINUS Kemanggisan",
-        image: "Images/Party.jpg",
+        image: "Images/Party.Jpg",
         rating: 4.9
     },
 
@@ -85,7 +85,7 @@ const products = [
         category: "Sports",
         price: 60000,
         location: "BINUS Alam Sutera",
-        image: "Images/Tennis.jpg",
+        image: "Images/Tennis.Jpg",
         rating: 4.7
     },
 
@@ -95,7 +95,7 @@ const products = [
         category: "Audio",
         price: 130000,
         location: "BINUS Alam Sutera",
-        image: "Images/Speaker.jpg",
+        image: "Images/Speaker.Jpg",
         rating: 4.8
     },
 
@@ -105,7 +105,7 @@ const products = [
         category: "Sports",
         price: 110000,
         location: "BINUS Kemanggisan",
-        image: "Images/Bike.jpg",
+        image: "Images/Bike.Jpg",
         rating: 4.9
     },
 
@@ -115,7 +115,7 @@ const products = [
         category: "Events",
         price: 45000,
         location: "BINUS Anggrek",
-        image: "Images/Chair.jpg",
+        image: "Images/Chair.Jpg",
         rating: 4.6
     },
 
@@ -125,7 +125,7 @@ const products = [
         category: "Cameras",
         price: 100000,
         location: "BINUS Kemanggisan",
-        image: "Images/GoPro.jpg",
+        image: "Images/GoPro.Jpg",
         rating: 4.8
     }
 ];
@@ -143,7 +143,7 @@ const orders = [
         status: "Completed",
         total: 100000,
         days: 2,
-        image: "Images/Canon.jpg"
+        image: "Images/Canon.Jpg"
     },
 
     {
@@ -153,7 +153,7 @@ const orders = [
         status: "Completed",
         total: 85000,
         days: 1,
-        image: "Images/Projector.jpg"
+        image: "Images/Projector.Jpg"
     },
 
     {
@@ -201,7 +201,6 @@ function money(number) {
 
 
 function save() {
-
     localStorage.setItem(
         "loopitCart",
         JSON.stringify(cart)
@@ -215,7 +214,6 @@ function save() {
 
 
 function showToast(message) {
-
     if (!toast) return;
 
     toast.textContent = message;
@@ -229,7 +227,6 @@ function showToast(message) {
 
 
 function product(id) {
-
     return products.find(
         item => item.id === Number(id)
     );
@@ -237,13 +234,15 @@ function product(id) {
 
 
 function navigate(path) {
-
     location.hash = path;
 }
 
 
-function getToday() {
+/* =========================================================
+   LOCAL DATE HELPERS
+========================================================= */
 
+function getToday() {
     const today = new Date();
 
     const year = today.getFullYear();
@@ -260,8 +259,51 @@ function getToday() {
 }
 
 
-function formatDate(dateString) {
+function getTomorrow() {
+    const tomorrow = new Date();
 
+    tomorrow.setDate(
+        tomorrow.getDate() + 1
+    );
+
+    const year = tomorrow.getFullYear();
+
+    const month = String(
+        tomorrow.getMonth() + 1
+    ).padStart(2, "0");
+
+    const day = String(
+        tomorrow.getDate()
+    ).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+}
+
+
+function addDaysToDate(dateString, days) {
+    const date = new Date(
+        dateString + "T00:00:00"
+    );
+
+    date.setDate(
+        date.getDate() + Number(days)
+    );
+
+    const year = date.getFullYear();
+
+    const month = String(
+        date.getMonth() + 1
+    ).padStart(2, "0");
+
+    const day = String(
+        date.getDate()
+    ).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+}
+
+
+function formatDate(dateString) {
     if (!dateString) return "";
 
     const date = new Date(
@@ -283,7 +325,6 @@ function calculateDays(
     startDate,
     endDate
 ) {
-
     const start = new Date(
         startDate + "T00:00:00"
     );
@@ -326,8 +367,6 @@ function navbar(active = "home") {
                         class="loopit-logo"
                     >
 
-                
-
                 </div>
 
 
@@ -344,6 +383,7 @@ function navbar(active = "home") {
                         Homepage
                     </a>
 
+
                     <a
                         href="#/products"
                         class="nav-link ${
@@ -354,6 +394,7 @@ function navbar(active = "home") {
                     >
                         Products
                     </a>
+
 
                     <a
                         href="#/orders"
@@ -511,6 +552,7 @@ function productCard(p) {
                     ✓ Verified owner
                 </span>
 
+
                 <button
                     class="favorite-button"
                     onclick="
@@ -525,10 +567,13 @@ function productCard(p) {
                     }
                 </button>
 
+
                 <img
                     src="${p.image}"
                     alt="${p.name}"
+                    onerror="this.style.display='none'"
                 >
+
 
                 <span class="rating-badge">
                     ★ ${p.rating}
@@ -543,9 +588,11 @@ function productCard(p) {
                     ${p.category}
                 </div>
 
+
                 <h3>
                     ${p.name}
                 </h3>
+
 
                 <div class="product-bottom">
 
@@ -738,6 +785,7 @@ function home() {
                         Cameras
                     </button>
 
+
                     <button
                         onclick="
                             navigate(
@@ -747,6 +795,7 @@ function home() {
                     >
                         Projectors
                     </button>
+
 
                     <button
                         onclick="
@@ -758,6 +807,7 @@ function home() {
                         Luggage
                     </button>
 
+
                     <button
                         onclick="
                             navigate(
@@ -767,6 +817,7 @@ function home() {
                     >
                         Camping
                     </button>
+
 
                     <button
                         onclick="
@@ -931,7 +982,9 @@ function productsPage() {
         "Audio",
         "Camping",
         "Travel",
-        "Projectors"
+        "Projectors",
+        "Sports",
+        "Events"
     ];
 
 
@@ -1081,6 +1134,14 @@ function productsPage() {
                             BINUS Kemanggisan
                         </option>
 
+                        <option>
+                            BINUS Senayan
+                        </option>
+
+                        <option>
+                            BINUS Alam Sutera
+                        </option>
+
                     </select>
 
                 </div>
@@ -1094,6 +1155,7 @@ function productsPage() {
                     <span class="filter-label">
                         ITEM CONDITION
                     </span>
+
 
                     <label class="check-option">
 
@@ -1358,7 +1420,9 @@ function detailPage(id) {
         return layout(
             `
                 <div class="empty-state">
+
                     Product not found.
+
                 </div>
             `,
             "products"
@@ -1547,6 +1611,7 @@ function bookingPage(id) {
 
     const p = product(id);
 
+
     if (!p) {
 
         return layout(
@@ -1574,18 +1639,7 @@ function bookingPage(id) {
 
 
     const today = getToday();
-
-    const tomorrowDate = new Date();
-
-    tomorrowDate.setDate(
-        tomorrowDate.getDate() + 1
-    );
-
-
-    const tomorrow =
-        tomorrowDate
-            .toISOString()
-            .split("T")[0];
+    const tomorrow = getTomorrow();
 
 
     return layout(`
@@ -1609,6 +1663,7 @@ function bookingPage(id) {
                 <h1>
                     Complete your booking
                 </h1>
+
 
                 <p>
                     Confirm your details and secure your rental.
@@ -1660,6 +1715,7 @@ function bookingPage(id) {
                                     ${p.category} · VERIFIED OWNER
                                 </span>
 
+
                                 <h3>
                                     ${p.name}
                                 </h3>
@@ -1672,7 +1728,12 @@ function bookingPage(id) {
                                         <span id="datePreview">
                                             ${formatDate(tomorrow)}
                                             →
-                                            Next day
+                                            ${formatDate(
+                                                addDaysToDate(
+                                                    tomorrow,
+                                                    1
+                                                )
+                                            )}
                                         </span>
 
                                     </div>
@@ -1682,6 +1743,9 @@ function bookingPage(id) {
                                         id="bookingDays"
                                         onchange="
                                             updateBookingSummary(
+                                                ${p.id}
+                                            );
+                                            updateBookingDate(
                                                 ${p.id}
                                             )
                                         "
@@ -2263,25 +2327,11 @@ function updateBookingDate(id) {
         getBookingDays();
 
 
-    const startDate =
-        new Date(
-            start + "T00:00:00"
-        );
-
-
-    const endDate =
-        new Date(startDate);
-
-
-    endDate.setDate(
-        endDate.getDate() + days
-    );
-
-
     const endString =
-        endDate
-            .toISOString()
-            .split("T")[0];
+        addDaysToDate(
+            start,
+            days
+        );
 
 
     preview.textContent =
@@ -2334,6 +2384,12 @@ function confirmBooking(id) {
         document.getElementById(
             "meetingTime"
         ).value;
+
+
+    const paymentMethod =
+        document.querySelector(
+            'input[name="paymentMethod"]:checked'
+        )?.value || "CampusPay";
 
 
     const days =
@@ -2405,7 +2461,13 @@ function confirmBooking(id) {
 
         meetingTime: meetingTime,
 
-        renterName: renterName
+        renterName: renterName,
+
+        renterPhone: renterPhone,
+
+        campusId: campusId,
+
+        paymentMethod: paymentMethod
 
     };
 
@@ -2435,6 +2497,9 @@ function confirmBooking(id) {
 
 function addToCart(id) {
 
+    id = Number(id);
+
+
     if (!cart.includes(id)) {
 
         cart.push(id);
@@ -2459,10 +2524,13 @@ function addToCart(id) {
 
 function removeCart(id) {
 
+    id = Number(id);
+
+
     cart =
         cart.filter(
             item =>
-                item !== id
+                Number(item) !== id
         );
 
 
@@ -2501,6 +2569,10 @@ function checkout() {
 }
 
 
+/* =========================================================
+   CART PAGE
+========================================================= */
+
 function cartPage() {
 
     const items =
@@ -2530,6 +2602,7 @@ function cartPage() {
             <h1 class="page-title">
                 Cart
             </h1>
+
 
             <p class="page-subtitle">
                 Review your rental items before checkout.
@@ -2709,7 +2782,7 @@ function cartPage() {
 
 
 /* =========================================================
-   ORDERS
+   ORDERS PAGE
 ========================================================= */
 
 function ordersPage() {
@@ -2722,6 +2795,7 @@ function ordersPage() {
                 Orders
             </h1>
 
+
             <p class="page-subtitle">
                 Track your current and previous rentals.
             </p>
@@ -2729,82 +2803,113 @@ function ordersPage() {
 
             <div class="orders-list">
 
-                ${orders
-                    .map(
-                        order => `
+                ${
+                    orders.length
 
-                        <div class="order-card">
+                        ? orders
+                            .map(
+                                order => `
 
-                            <div class="order-image">
+                                <div class="order-card">
 
-                                <img
-                                    src="${order.image}"
-                                    alt="${order.product}"
-                                >
+                                    <div class="order-Image">
 
-                            </div>
+                                        <img
+                                            src="${order.image}"
+                                            alt="${order.product}"
+                                        >
+
+                                    </div>
 
 
-                            <div class="order-info">
+                                    <div class="order-info">
+
+                                        <h3>
+                                            ${order.product}
+                                        </h3>
+
+                                        <p>
+                                            Order ${order.id}
+                                        </p>
+
+                                        <p>
+                                            ${order.date}
+                                            ·
+                                            ${order.days}
+                                            day${order.days > 1 ? "s" : ""}
+                                        </p>
+
+                                    </div>
+
+
+                                    <span
+                                        class="
+                                            order-status
+                                            ${
+                                                order.status ===
+                                                "Cancelled"
+                                                    ? "cancelled"
+                                                    : ""
+                                            }
+                                        "
+                                    >
+                                        ${order.status}
+                                    </span>
+
+
+                                    <div class="order-total">
+
+                                        <strong>
+                                            ${money(order.total)}
+                                        </strong>
+
+
+                                        <button
+                                            class="secondary-button"
+                                            onclick="
+                                                navigate(
+                                                    '#/order/${order.id}'
+                                                )
+                                            "
+                                        >
+                                            View detail
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            `
+                            )
+                            .join("")
+
+                        : `
+                            <div class="empty-state">
+
+                                <div class="empty-icon">
+                                    📦
+                                </div>
 
                                 <h3>
-                                    ${order.product}
+                                    No orders yet
                                 </h3>
 
                                 <p>
-                                    Order ${order.id}
+                                    Your rental orders will appear here.
                                 </p>
-
-                                <p>
-                                    ${order.date}
-                                    ·
-                                    ${order.days}
-                                    day${order.days > 1 ? "s" : ""}
-                                </p>
-
-                            </div>
-
-
-                            <span
-                                class="
-                                    order-status
-                                    ${
-                                        order.status ===
-                                        "Cancelled"
-                                            ? "cancelled"
-                                            : ""
-                                    }
-                                "
-                            >
-                                ${order.status}
-                            </span>
-
-
-                            <div class="order-total">
-
-                                <strong>
-                                    ${money(order.total)}
-                                </strong>
-
 
                                 <button
-                                    class="secondary-button"
+                                    class="primary-button"
                                     onclick="
-                                        navigate(
-                                            '#/order/${order.id}'
-                                        )
+                                        navigate('#/products')
                                     "
                                 >
-                                    View detail
+                                    Browse Products
                                 </button>
 
                             </div>
-
-                        </div>
-
-                    `
-                    )
-                    .join("")}
+                        `
+                }
 
             </div>
 
@@ -2824,7 +2929,37 @@ function orderDetailPage(id) {
         orders.find(
             item =>
                 item.id === id
-        ) || orders[0];
+        );
+
+
+    if (!order) {
+
+        return layout(`
+
+            <section class="standard-page">
+
+                <div class="empty-state">
+
+                    <h3>
+                        Order not found
+                    </h3>
+
+                    <button
+                        class="primary-button"
+                        onclick="
+                            navigate('#/orders')
+                        "
+                    >
+                        Back to Orders
+                    </button>
+
+                </div>
+
+            </section>
+
+        `, "orders");
+
+    }
 
 
     const p =
@@ -2832,7 +2967,7 @@ function orderDetailPage(id) {
             item =>
                 item.name ===
                 order.product
-        ) || products[0];
+        );
 
 
     return layout(`
@@ -2852,6 +2987,7 @@ function orderDetailPage(id) {
             <h1 class="page-title">
                 Order Detail
             </h1>
+
 
             <p class="page-subtitle">
                 Order ${order.id}
@@ -2893,11 +3029,11 @@ function orderDetailPage(id) {
 
                 <div class="order-detail-product">
 
-                    <div class="cart-image">
+                    <div class="cart-Image">
 
                         <img
-                            src="${p.image}"
-                            alt="${p.name}"
+                            src="${order.image}"
+                            alt="${order.product}"
                         >
 
                     </div>
@@ -2906,14 +3042,14 @@ function orderDetailPage(id) {
                     <div>
 
                         <h3>
-                            ${p.name}
+                            ${order.product}
                         </h3>
 
                         <p>
                             ${order.days}
                             day${order.days > 1 ? "s" : ""}
                             ·
-                            ${money(p.price)}
+                            ${p ? money(p.price) : "—"}
                             / day
                         </p>
 
@@ -2956,6 +3092,30 @@ function orderDetailPage(id) {
                         ✓ Ready for pickup
                     </div>
 
+
+                    ${
+                        order.meetingPoint
+                            ? `
+                                <div>
+                                    📍 Meeting point:
+                                    ${order.meetingPoint}
+                                </div>
+                            `
+                            : ""
+                    }
+
+
+                    ${
+                        order.meetingTime
+                            ? `
+                                <div>
+                                    🕐 Meeting time:
+                                    ${order.meetingTime}
+                                </div>
+                            `
+                            : ""
+                    }
+
                 </div>
 
             </div>
@@ -2980,6 +3140,7 @@ function profilePage() {
                 Profile
             </h1>
 
+
             <p class="page-subtitle">
                 Manage your account and rental preferences.
             </p>
@@ -2994,9 +3155,11 @@ function profilePage() {
                         AT
                     </div>
 
+
                     <h2>
                         Attasya
                     </h2>
+
 
                     <p>
                         attasya@email.com
@@ -3009,6 +3172,7 @@ function profilePage() {
                             Personal information
                         </button>
 
+
                         <button
                             onclick="
                                 showToast(
@@ -3018,6 +3182,7 @@ function profilePage() {
                         >
                             Notifications
                         </button>
+
 
                         <button
                             onclick="
@@ -3029,6 +3194,7 @@ function profilePage() {
                             Payment methods
                         </button>
 
+
                         <button
                             onclick="
                                 showToast(
@@ -3038,6 +3204,7 @@ function profilePage() {
                         >
                             Security
                         </button>
+
 
                         <button
                             onclick="
@@ -3203,9 +3370,11 @@ function searchPage() {
                     LOOPIT SEARCH
                 </span>
 
+
                 <h1>
                     Find what you need.
                 </h1>
+
 
                 <p>
                     Search rental items available
@@ -3231,11 +3400,13 @@ function searchPage() {
                         ⌕
                     </span>
 
+
                     <input
                         name="q"
                         value="${query}"
                         placeholder="Search cameras, projectors, tents..."
                     >
+
 
                     <button>
                         Search
@@ -3260,6 +3431,7 @@ function searchPage() {
                     }
 
                 </h2>
+
 
                 <span>
                     ${list.length} items
