@@ -2812,7 +2812,7 @@ function ordersPage() {
 
                                 <div class="order-card">
 
-                                    <div class="order-Image">
+                                    <div class="order-image">
 
                                         <img
                                             src="${order.image}"
@@ -3029,7 +3029,7 @@ function orderDetailPage(id) {
 
                 <div class="order-detail-product">
 
-                    <div class="cart-Image">
+                    <div class="cart-image">
 
                         <img
                             src="${order.image}"
